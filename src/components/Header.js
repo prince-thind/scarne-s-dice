@@ -7,15 +7,12 @@ export default function Header({ scores, turn, setScores, setWinner }) {
         <div>{turn}'s turn</div>
         <div className="score player2-score">{scores.player2}</div>
       </div>
-      <button
-        onClick={() => {
-          setScores({ player1: 0, player2: 0 });
-          setWinner(null);
-        }}
-      >
-        {" "}
-        reset{" "}
-      </button>
+      <button onClick={reset}> reset </button>
     </header>
   );
+
+  function reset() {
+    setScores({ player1: 0, player2: 0 });
+    setWinner(null);
+  }
 }

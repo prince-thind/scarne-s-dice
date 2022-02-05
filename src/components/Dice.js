@@ -1,35 +1,39 @@
-import { useState } from "react";
-
 export default function Dice({ setTurn, turn, setScores }) {
-  const [number, setNumber] = useState(randomRoll());
+  const random = randomRoll();
+
   return (
     <button className="dice" onClick={playRound}>
-      {number}
+      {random}
     </button>
   );
 
   function playRound() {
-    const random = randomRoll();
-    setNumber(random);
-
-    if (random === 10) {
-      setScores((scores) => {
-        const copy = { ...scores };
-        copy[turn] = 0;
-        return copy;
-      });
-      setTurn((turn) => {
-        if (turn === "player1") {
-          return "player2";
-        } else return "player1";
-      });
+    if (random === 1) {
+      resetMove();
     } else {
-      setScores((scores) => {
-        const copy = { ...scores };
-        copy[turn] = scores[turn]+random;
-        return copy;
-      });
+      incrementScore(random);
     }
+  }
+
+  function incrementScore(number) {
+    setScores((scores) => {
+      const copy = { ...scores };
+      copy[turn] = scores[turn] + number;
+      return copy;
+    });
+  }
+
+  function resetMove() {
+    setScores((scores) => {
+      const copy = { ...scores };
+      copy[turn] = 0;
+      return copy;
+    });
+    setTurn((turn) => {
+      if (turn === "player1") {
+        return "player2";
+      } else return "player1";
+    });
   }
 
   function randomRoll() {

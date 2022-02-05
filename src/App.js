@@ -19,18 +19,6 @@ function App() {
     }
   }, [scores]);
 
-  let content = (
-    <>
-      {" "}
-      <Dice setScores={setScores} turn={turn} setTurn={setTurn} />
-      <Pass setTurn={setTurn} />{" "}
-    </>
-  );
-
-  if (winner) {
-    content = <div>{winner} has Won!</div>;
-  }
-
   return (
     <div className="App">
       <Header
@@ -39,9 +27,23 @@ function App() {
         turn={turn}
         setWinner={setWinner}
       />
-      <main>{content}</main>
+      <main>
+        <MainContent />
+      </main>
     </div>
   );
+  
+  function MainContent() {
+    if (winner) {
+      return <div>{winner} has Won!</div>;
+    }
+    return (
+      <div>
+        <Dice setScores={setScores} turn={turn} setTurn={setTurn} />
+        <Pass setTurn={setTurn} />
+      </div>
+    );
+  }
 }
 
 export default App;
