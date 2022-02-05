@@ -10,7 +10,7 @@ function App() {
     player2: 0,
   });
   const [winner, setWinner] = useState(null);
-  const [diceNumber, setDiceNumber]=useState(0);
+  const [diceNumber, setDiceNumber] = useState(0);
 
   useEffect(() => {
     if (scores.player1 >= 100) {
@@ -27,6 +27,7 @@ function App() {
         setScores={setScores}
         turn={turn}
         setWinner={setWinner}
+        setDiceNumber={setDiceNumber}
       />
       <main>
         <MainContent />
@@ -40,8 +41,14 @@ function App() {
     }
     return (
       <div>
-        <Dice setScores={setScores} turn={turn} setTurn={setTurn} diceNumber={diceNumber} setDiceNumber={setDiceNumber} />
-        <Pass setTurn={setTurn} setDiceNumber={setDiceNumber}/>
+        <Dice
+          setScores={setScores}
+          turn={turn}
+          setTurn={setTurn}
+          diceNumber={diceNumber}
+          setDiceNumber={setDiceNumber}
+        />
+        <Pass setTurn={setTurn} setDiceNumber={setDiceNumber} />
       </div>
     );
   }
