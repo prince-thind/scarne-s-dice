@@ -1,4 +1,4 @@
-export default function Pass({ setTurn }) {
+export default function Pass({ setTurn, setDiceNumber }) {
   return <button onClick={passTurn}>Pass</button>;
 
   function passTurn() {
@@ -8,5 +8,6 @@ export default function Pass({ setTurn }) {
       }
       return "player1";
     });
+    setDiceNumber(0);
   }
 }

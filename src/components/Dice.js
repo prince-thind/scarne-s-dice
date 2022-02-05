@@ -1,16 +1,23 @@
-export default function Dice({ setTurn, turn, setScores }) {
-  const random = randomRoll();
-
+export default function Dice({
+  setTurn,
+  turn,
+  setScores,
+  diceNumber,
+  setDiceNumber,
+}) {
   return (
     <button className="dice" onClick={playRound}>
-      {random}
+      {diceNumber}
     </button>
   );
 
   function playRound() {
+    const random = randomRoll();
+    setDiceNumber(random);
+
     if (random === 1) {
       resetMove();
-    } else {
+    } else if (random > 1) {
       incrementScore(random);
     }
   }
