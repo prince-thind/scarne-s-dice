@@ -5,7 +5,8 @@
 }
 body {
   text-align: center;
-  background-color: hsl(0, 5%, 90%);
+  color:white;
+  background-color: hsl(45, 15%, 15%);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .button {
@@ -15,9 +16,8 @@ body {
 }
 
 .heading {
-  background-color: hsl(120, 50%, 75%);
+  background-color: hsl(120, 25%, 25%);
   padding: 0.5rem;
-  border-bottom: 2px solid gray;
 }
 .scores {
   display: flex;

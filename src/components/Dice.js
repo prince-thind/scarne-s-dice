@@ -26,7 +26,7 @@ export default function Dice({
     const random = randomRoll();
     setDiceNumber(random);
 
-    if (random === 10) {
+    if (random === 1) {
       resetMove();
     } else if (random > 1) {
       incrementScore(random);
