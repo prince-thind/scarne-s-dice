@@ -6,7 +6,7 @@ export default function Dice({
   setDiceNumber,
 }) {
   return (
-    <button className="dice" onClick={playRound}>
+    <button className="dice button" onClick={playRound}>
       {diceNumber}
     </button>
   );

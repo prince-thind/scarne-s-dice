@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  background-color: hsl(0, 5%, 90%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.button {
+  display: block;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.heading {
+  background-color: hsl(120, 50%, 75%);
+  padding: 0.5rem;
+  border-bottom: 2px solid gray;
+}
+.scores {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+}
+.reset {
+  padding: 0.5rem;
+  font-size: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+.dice {
+}
+.pass {
+}

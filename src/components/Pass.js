@@ -1,5 +1,5 @@
 export default function Pass({ setTurn, setDiceNumber }) {
-  return <button onClick={passTurn}>Pass</button>;
+  return <button  className="pass button" onClick={passTurn}>Pass</button>;
 
   function passTurn() {
     setTurn((turn) => {
