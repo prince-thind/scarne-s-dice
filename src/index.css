@@ -24,6 +24,13 @@ body {
   justify-content: space-around;
   font-size: 1.5rem;
   padding: 0.2rem;
+  margin: 0.5rem 0;
+}
+.numeric-score {
+  display: inline-block;
+}
+.score svg {
+  margin: 0 1rem;
 }
 .reset {
   padding: 0.5rem;
@@ -33,6 +40,15 @@ body {
   margin-right: 2rem;
 }
 .dice {
+  padding: 0.5rem;
+}
+.dice-icon {
+  font-size: 3rem;
 }
 .pass {
+  padding: 0.5rem;
+  margin: 1rem auto;
+}
+.winner{
+    font-size: 3rem;
 }

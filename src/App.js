@@ -37,7 +37,7 @@ function App() {
 
   function MainContent() {
     if (winner) {
-      return <div>{winner} has Won!</div>;
+      return <div className="winner">{winner[0].toUpperCase()+winner.slice(1)} has Won!</div>;
     }
     return (
       <div>

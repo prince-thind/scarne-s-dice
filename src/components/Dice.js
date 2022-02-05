@@ -1,3 +1,14 @@
+import {
+  faDice,
+  faDiceOne,
+  faDiceFive,
+  faDiceFour,
+  faDiceThree,
+  faDiceSix,
+  faDiceTwo,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Dice({
   setTurn,
   turn,
@@ -7,7 +18,7 @@ export default function Dice({
 }) {
   return (
     <button className="dice button" onClick={playRound}>
-      {diceNumber}
+      {formatDice(diceNumber)}
     </button>
   );
 
@@ -15,7 +26,7 @@ export default function Dice({
     const random = randomRoll();
     setDiceNumber(random);
 
-    if (random === 1) {
+    if (random === 10) {
       resetMove();
     } else if (random > 1) {
       incrementScore(random);
@@ -46,4 +57,18 @@ export default function Dice({
   function randomRoll() {
     return Math.trunc(Math.random() * 6 + 1);
   }
+}
+
+function formatDice(diceNumber) {
+  const icons = [
+    faDice,
+    faDiceOne,
+    faDiceTwo,
+    faDiceThree,
+    faDiceFour,
+    faDiceFive,
+    faDiceSix,
+  ];
+
+  return <FontAwesomeIcon className="dice-icon" icon={icons[diceNumber]} />
 }
